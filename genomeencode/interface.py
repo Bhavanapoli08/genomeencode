@@ -7,9 +7,9 @@ from tkinter import Tk, Toplevel, filedialog, Menu, messagebox, ttk
 from tkinter import Label, Entry, Button, StringVar, Text, Scrollbar
 from tkinter import RIGHT, Y, X,  HORIZONTAL, BOTTOM, NONE, END
 from typing import Iterator, Generator
-from dnazip.sequence import Sequence
-from dnazip.decoder import HuffDecoder, BWDecoder, FullDecoder
-from dnazip.encoder import HuffEncoder, BWEncoder, FullEncoder
+from genomeencode.sequence import Sequence
+from genomeencode.decoder import HuffDecoder, BWDecoder, FullDecoder
+from genomeencode.encoder import HuffEncoder, BWEncoder, FullEncoder
 
 class Interface(Tk):
     """View class of the application using a Tkinter interface."""

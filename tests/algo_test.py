@@ -7,8 +7,8 @@ from __future__ import absolute_import
 import unittest
 import sys
 sys.path.append('../')
-from src.burros_wheeler import BurrosWheeler
-from src.huffman import HuffmanTree
+from genomeencode.burros_wheeler import BurrosWheeler
+from genomeencode.huffman import HuffmanTree
 
 class AlgorithmsTest(unittest.TestCase):
     """Test class to try out The Algorithms that were implemented, i.e;

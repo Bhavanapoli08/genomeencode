@@ -7,7 +7,7 @@ The yielding in some functions doesn't respect Space complexity, but it was done
 manner to facilitate the data flow into the View class (the GUI).
 """
 from __future__ import absolute_import
-from typing import List, Tuple
+from typing import List, Tuple, Generator
 
 class BurrosWheeler:
     """A class to represent the Burrows-Wheeler algorithm, all methods are
@@ -33,7 +33,7 @@ class BurrosWheeler:
                                  # of a line
 
     @staticmethod
-    def string_rotations(seq: str) -> List[str]:
+    def string_rotations(seq: str) -> Generator[List[str], None, None]:
         """Returns all string rotations of a sequence.
 
         Parameters
@@ -60,7 +60,7 @@ class BurrosWheeler:
             yield [rot for rot in all_rotations]
 
     @staticmethod
-    def construct_bwm(rotations: List[str]) -> List[str]:
+    def construct_bwm(rotations: List[str]) ->  List[str]:
         """This method constructs the Burrows-Wheeler Matrix from a list of
         string rotations.
 
@@ -106,7 +106,7 @@ class BurrosWheeler:
         return transformed_seq
 
     @staticmethod
-    def reconstruct_bwm(bwt: str) -> List[str]:
+    def reconstruct_bwm(bwt: str) -> Generator[List[str], None, None]:
         """This method reconstructs the Burrows-Wheeler Matrix given the
         corresponding Burros-Wheeler Transform. The naive algorithm for
         constructing the matrix given the transform is going to iteratively
@@ -214,3 +214,20 @@ class BurrosWheeler:
                 bwt.append(sequence[i - 1])
 
         return ''.join(bwt)
+    
+    @staticmethod
+    def inverse_bwt(bwt: str) -> str:
+        """Inverse Burrows-Wheeler Transform (reconstruct original string)."""
+
+        n = len(bwt)
+        table = [""] * n
+
+        for _ in range(n):
+            # Prepend bwt as first column
+            table = sorted([bwt[i] + table[i] for i in range(n)])
+
+        # Find the row that ends with '$'
+        for row in table:
+            if row.endswith("$"):
+                return row[:-1]   # remove $
+

@@ -4,17 +4,17 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='dnazip-bioinfo',
-    version='0.2',
-    description='A Python implementation of the Burros-Wheeler and Huffman coding algorithms',
+    name='genomeencode',
+    version='1.0.0',
+    description='Optimized DNA Sequence Compression and Reconstruction using Burros-Wheeler and Huffman coding algorithms',
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url='http://github.com/dabane-ghassan/dnazip',
-    author='dabane-ghassan',
-    author_email = 'dabane.ghassan@gmail.com',
-    download_url = 'https://github.com/dabane-ghassan/dnazip/archive/v0.2.tar.gz',
+    url='https://github.com/Bhavanapoli08/genomeencode',
+    author='Bhavana Poli',
+    author_email = 'bhavanapoli61@gmail.com',
+    download_url = 'https://github.com/Bhavanapoli08/genomeencode/archive/v1.0.0.tar.gz',
     license='MIT',
-    packages=setuptools.find_packages(include=['dnazip', 'dnazip.*']),
+    packages=setuptools.find_packages(include=['genomeencode', 'genomeencode.*']),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
@@ -32,7 +32,7 @@ setuptools.setup(
     },
     entry_points={
         'gui_scripts': [
-            'dnazip=dnazip.main:main'
+            'genomeencode=genomeencode.interface:Interface.main'
         ]
     },
     python_requires='>=3.6',

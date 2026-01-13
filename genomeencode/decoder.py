@@ -3,9 +3,9 @@
 """Decoder classes, Controller architecture in a MVC layout."""
 from __future__ import absolute_import
 import os
-from dnazip.sequence import Sequence
-from dnazip.burros_wheeler import BurrosWheeler
-from dnazip.huffman import HuffmanTree
+from genomeencode.sequence import Sequence
+from genomeencode.burros_wheeler import BurrosWheeler
+from genomeencode.huffman import HuffmanTree
 
 class HuffDecoder:
     """A decoder class for Huffman decompression, it is used as a controller
